@@ -86,4 +86,5 @@ function getImages(sendBackResponseToBrowser) {
 //module.exports = router;
 
 module.exports.makeApiRequest = makeApiRequest; 
+module.exports.getImages = getImages; 
 
