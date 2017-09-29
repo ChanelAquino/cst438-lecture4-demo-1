@@ -46,29 +46,6 @@ function makeApiRequest(sendBackResponseToBrowser) {
 }
 
 
-function getImages(sendBackResponseToBrowser) {
-    var apiResponse = ''; 
-    
-    https.get(options, function(response){
-        response.setEncoding('utf8');
-        response.on('data', function(chunk) {
-            console.log("received data: "); 
-            apiResponse += chunk; 
-        }); 
-        
-        response.on('end', function() {
-            console.log("status code: " + this.statusCode); 
-            //console.log("Complete response: " + apiResponse); 
-            /*execute callback*/
-            var responseJSON = JSON.parse(apiResponse); 
-            var images = responseJSON.images;
-            sendBackResponseToBrowser(null, images); 
-            
-        }); 
-    }).on("error", function(e) {
-        console.log("Got an error: " + e.message); 
-    }); 
-}
 
 
 
@@ -86,5 +63,5 @@ function getImages(sendBackResponseToBrowser) {
 //module.exports = router;
 
 module.exports.makeApiRequest = makeApiRequest; 
-module.exports.getImages = getImages; 
+
 
