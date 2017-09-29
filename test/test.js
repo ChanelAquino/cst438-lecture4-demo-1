@@ -54,8 +54,8 @@ describe("Getty api call", function() {
     it("should return without errors", function(done) {
         
         getty.makeApiRequest(function(error, imgURI) {
-            //console.log("tweets: " + tweets.length); 
-            console.log("imageURI: " + imgURI); 
+            console.log("tweets: " + tweets.length); 
+            // console.log("imageURI: " + imgURI); 
             
             expect(imgURI).to.not.be.a('null'); 
             done(); 
